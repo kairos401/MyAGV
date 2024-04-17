@@ -1,0 +1,15 @@
+digraph G {
+"base_link" -> "camera_link"[label="Broadcaster: /aruco_marker_navigation_32934_1713336445379\nAverage rate: 30.323 Hz\nMost recent transform: 1713336486.380 ( 0.018 sec old)\nBuffer length: 4.914 sec\n"];
+"base_footprint" -> "base_up"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10.217 Hz\nMost recent transform: 1713336486.272 ( 0.127 sec old)\nBuffer length: 4.796 sec\n"];
+"odom" -> "base_footprint"[label="Broadcaster: /myagv_odometry_node\nAverage rate: 12.863 Hz\nMost recent transform: 1713336486.314 ( 0.084 sec old)\nBuffer length: 4.820 sec\n"];
+"map" -> "odom"[label="Broadcaster: /gmapping\nAverage rate: 20.208 Hz\nMost recent transform: 1713336486.356 ( 0.042 sec old)\nBuffer length: 4.800 sec\n"];
+"base_footprint" -> "laser_frame"[label="Broadcaster: /base_footprint_to_laser\nAverage rate: 24.921 Hz\nMost recent transform: 1713336486.371 ( 0.027 sec old)\nBuffer length: 4.815 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1713336486.398"[ shape=plaintext ] ;
+ }->"base_link";
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1713336486.398"[ shape=plaintext ] ;
+ }->"map";
+}
